@@ -7,16 +7,10 @@ const { connectDB } = require("./connection");
 const routes = require("./routes");
 require("dotenv").config();
 
-app.use(express.json());
-app.use(cookieParser());
 connectDB();
-app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
-
-//mern project deploy process
-// app.get("/", (req, res) => {
-//   app.use(express.static(path.resolve(__dirname, "dist", "client")));
-//   res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
-// });
+app.use(express.json());
+app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(cookieParser());
 
 app.use("/api", routes);
 

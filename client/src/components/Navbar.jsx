@@ -50,7 +50,7 @@ const Navbar = () => {
           </Link>
         )}
         {isAuth ? (
-          <li className="hover:text-black list-none cursor-pointer" onClick={handleLogout}>
+          <li className="hover:text-black list-none hover:cursor-pointer" onClick={handleLogout}>
             Logout
           </li>
         ) : (
